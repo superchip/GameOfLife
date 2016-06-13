@@ -16,10 +16,9 @@ namespace GameOfLife
 
         private GOLGrid _gameGrid;
         private Neighberhood _neighberhood;
-        private GameOfLifePattern _golPattern;
+        private IGameOfLifePattern _golPattern;
 
-        //TODO - 5x5
-        public GameOfLifeGame(int rows, int columns) : base(7, 7)
+        public GameOfLifeGame(int rows, int columns) : base(rows, columns)
         {
             _gameGrid = new GOLGrid(rows, columns);
             prepareGame();

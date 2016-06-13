@@ -14,9 +14,9 @@ namespace GameOfLife
     {
         public enum Pattern { Blinker, Smiley, DieHard };
 
-        public static GameOfLifePattern CreatePattern(Pattern pattern)
+        public static IGameOfLifePattern CreatePattern(Pattern pattern)
         {
-            GameOfLifePattern golPattern = null;
+            IGameOfLifePattern golPattern = null;
 
             switch (pattern)
             {
@@ -39,12 +39,12 @@ namespace GameOfLife
         }
     }
 
-    public interface GameOfLifePattern
+    public interface IGameOfLifePattern
     {
         void AssignPattern(GOLGrid gameGrid);
     }
 
-    public class BlinkerPattern : GameOfLifePattern
+    public class BlinkerPattern : IGameOfLifePattern
     {
         public void AssignPattern(GOLGrid gameGrid)
         {
@@ -54,7 +54,7 @@ namespace GameOfLife
         }
     }
 
-    public class SmileyPattern : GameOfLifePattern
+    public class SmileyPattern : IGameOfLifePattern
     {
         public void AssignPattern(GOLGrid gameGrid)
         {
@@ -80,7 +80,7 @@ namespace GameOfLife
         }
     }
 
-    public class DieHardPattern : GameOfLifePattern
+    public class DieHardPattern : IGameOfLifePattern
     {
         public void AssignPattern(GOLGrid gameGrid)
         {
