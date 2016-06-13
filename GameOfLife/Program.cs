@@ -10,7 +10,7 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            GameOfLifeGame game = new GameOfLifeGame(7,7);
+            IGame game = GameFactory.CreateGridGame(GameFactory.GameName.GameOfLife, 7, 7);
             game.Play();
         }
     }
