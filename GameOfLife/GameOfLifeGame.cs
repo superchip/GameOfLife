@@ -17,6 +17,7 @@ namespace GameOfLife
         private GOLGrid _gameGrid;
         private Neighberhood _neighberhood;
         private IGameOfLifePattern _golPattern;
+        private PatternFactory.Pattern _pattern;
 
         public GameOfLifeGame(int rows, int columns) : base(rows, columns)
         {
@@ -52,6 +53,10 @@ namespace GameOfLife
         
         private void displayGame()
         {
+            Console.Clear();
+
+            Console.WriteLine("\n      " + _pattern.ToString() + "\n   ============\n");
+
             for (int i = 0; i < _rows; ++i)
             {
                 Console.WriteLine();
@@ -63,9 +68,7 @@ namespace GameOfLife
                         Console.Write(" - ");
                 }
 
-            }
-
-            Console.WriteLine("\n\n\n===================\n");
+            }     
         }
 
         /// <summary>
@@ -75,7 +78,8 @@ namespace GameOfLife
         {
             // Randomizing Pattern
             Random rand = new Random(System.Environment.TickCount);
-            _golPattern = PatternFactory.CreatePattern((PatternFactory.Pattern)rand.Next(0, 3));
+            _pattern = (PatternFactory.Pattern)rand.Next(0, 3);
+            _golPattern = PatternFactory.CreatePattern(_pattern);
             _golPattern.AssignPattern(_gameGrid);
 
             // Updating neighberhood with game grid

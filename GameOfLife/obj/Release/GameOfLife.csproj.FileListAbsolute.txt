@@ -3,3 +3,4 @@ C:\book\2015\GameOfLife\GameOfLife\bin\Release\GameOfLife.exe
 C:\book\2015\GameOfLife\GameOfLife\bin\Release\GameOfLife.pdb
 C:\book\2015\GameOfLife\GameOfLife\obj\Release\GameOfLife.exe
 C:\book\2015\GameOfLife\GameOfLife\obj\Release\GameOfLife.pdb
+C:\book\2015\GameOfLife\GameOfLife\obj\Release\GameOfLife.csprojResolveAssemblyReference.cache
